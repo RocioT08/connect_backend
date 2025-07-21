@@ -33,7 +33,7 @@ It’s powered by **NestJS**, **Prisma**, and **PostgreSQL**, and is deployed on
 - **Deployment:** [Render]
 
 ---
-
+⚠️ Note: The backend is hosted on a free Render instance. If it hasn't received traffic in the past few minutes, it may take a few seconds to respond the first time it's accessed.
 ## Environment Variables
 
 Add the following to your `.env` file (not included in Git):
