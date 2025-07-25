@@ -8,10 +8,11 @@ datasource db {
 }
 
 model User {
-  id       Int     @id @default(autoincrement())
-  email    String  @unique
+  id       Int        @id @default(autoincrement())
+  email    String     @unique
   password String
   tasks    Task[]
+  feedback Feedback[]
 }
 
 model Task {
@@ -19,6 +20,15 @@ model Task {
   title     String
   status    String
   assignee  String?
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Feedback {
+  id        Int      @id @default(autoincrement())
+  q1        Int
+  q2        Int
   userId    Int
   user      User     @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
