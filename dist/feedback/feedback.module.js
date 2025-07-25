@@ -6,18 +6,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.FeedbackModule = void 0;
 const common_1 = require("@nestjs/common");
-const auth_module_1 = require("./auth/auth.module");
-const tasks_module_1 = require("./tasks/tasks.module");
-const prisma_module_1 = require("./prisma/prisma.module");
-const feedback_module_1 = require("./feedback/feedback.module");
-let AppModule = class AppModule {
+const feedback_controller_1 = require("./feedback.controller");
+const feedback_service_1 = require("./feedback.service");
+const prisma_module_1 = require("../prisma/prisma.module");
+let FeedbackModule = class FeedbackModule {
 };
-exports.AppModule = AppModule;
-exports.AppModule = AppModule = __decorate([
+exports.FeedbackModule = FeedbackModule;
+exports.FeedbackModule = FeedbackModule = __decorate([
     (0, common_1.Module)({
-        imports: [auth_module_1.AuthModule, tasks_module_1.TasksModule, prisma_module_1.PrismaModule, feedback_module_1.FeedbackModule],
+        imports: [prisma_module_1.PrismaModule],
+        controllers: [feedback_controller_1.FeedbackController],
+        providers: [feedback_service_1.FeedbackService],
     })
-], AppModule);
-//# sourceMappingURL=app.module.js.map
+], FeedbackModule);
+//# sourceMappingURL=feedback.module.js.map
